@@ -1,1 +1,431 @@
-# Chananchida.github.io
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHANANCHIDA TRIRATTANAWONG - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-pink: #ec4899;
+            --primary-dark-pink: #be185d;
+            --soft-pink-bg: #fff1f2;
+            --card-pink-bg: #ffe4e6;
+            --accent-pink: #f43f5e;
+            --text-dark: #374151;
+            --text-light: #6b7280;
+            --white: #ffffff;
+            --shadow: 0 10px 30px -5px rgba(236, 72, 153, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Kanit', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #fffafb;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(236, 72, 153, 0.08);
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary-dark-pink);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-pink);
+        }
+
+        /* Cover Banner Section */
+        .cover-banner {
+            width: 100%;
+            height: 350px;
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+            background-color: var(--card-pink-bg);
+        }
+
+        .cover-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .cover-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(236, 72, 153, 0.2), rgba(190, 24, 93, 0.6));
+        }
+
+        /* General Section Styling */
+        section {
+            padding: 5rem 2rem 3rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-dark-pink);
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-pink);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        #hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: -80px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2.5rem 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(5px);
+            border: 1px solid var(--card-pink-bg);
+            max-width: 800px;
+            width: 90%;
+        }
+
+        .hero-subtitle {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 600;
+            color: var(--primary-pink);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-dark-pink);
+            margin-bottom: 0.5rem;
+            word-break: break-word;
+        }
+
+        .hero-role {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .btn-explore {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--primary-pink);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-explore:hover {
+            background: var(--primary-dark-pink);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4);
+        }
+
+        /* About Section */
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--card-pink-bg);
+        }
+
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid var(--card-pink-bg);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            margin: 0 auto;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 280px;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: var(--white);
+            padding: 1.8rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--primary-pink);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-card h3 {
+            color: var(--primary-dark-pink);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Card Box (Projects & SOP) */
+        .card-box {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--card-pink-bg);
+        }
+
+        /* Contact Section */
+        .contact-info {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--card-pink-bg);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .contact-item strong {
+            color: var(--primary-dark-pink);
+            display: block;
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .contact-item a {
+            color: var(--primary-pink);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--soft-pink-bg);
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: 3rem;
+            border-top: 1px solid var(--card-pink-bg);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .cover-banner {
+                height: 220px;
+            }
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            .hero-card {
+                padding: 1.5rem;
+            }
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">CHANANCHIDA</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#sop">My SOP</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="cover-banner">
+        <img src="profile.jpg" alt="Cover Banner" onerror="this.src='https://via.placeholder.com/1200x400/ffe4e6/be185d?text=profile.jpg'">
+        <div class="cover-overlay"></div>
+    </div>
+
+    <div id="hero">
+        <div class="hero-card">
+            <p class="hero-subtitle">PORTFOLIO</p>
+            <h1 class="hero-title">CHANANCHIDA TRIRATTANAWONG</h1>
+            <p class="hero-role">Medical Student</p>
+            <a href="#about" class="btn-explore">Explore Portfolio</a>
+        </div>
+    </div>
+
+    <section id="about">
+        <h2 class="section-title">About</h2>
+        <div class="about-container">
+            <img src="profile.jpg" alt="Chananchida Trirattanawong" class="profile-img" onerror="this.src='https://via.placeholder.com/250/ffe4e6/be185d?text=profile.jpg'">
+            <div class="about-text">
+                <p>Welcome to my portfolio! I am a <strong>Medical Student</strong> passionate about medical science, healthcare innovation, clinical research, and dedicated patient care. Dedicated to learning and contributing to medicine to improve quality of life and human health.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Medical Terminology & Diagnostics</h3>
+                <p>Understanding of clinical terminology, human anatomy, and basic diagnostic principles.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Patient Care & Clinical Communication</h3>
+                <p>Strong empathy, ethical communication, and interpersonal skills for patient care and teamwork.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Biological Research & Physiology</h3>
+                <p>Background in biological sciences, physiology, laboratory techniques, and scientific methodology.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="card-box">
+            <p>Portfolio projects, academic research, clinical observations, and medical volunteer activities will be listed here.</p>
+        </div>
+    </section>
+
+    <section id="sop">
+        <h2 class="section-title">My SOP</h2>
+        <div class="card-box">
+            <p>Statement of Purpose (SOP) content goes here...</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <strong>Full Name:</strong>
+                <span>Chananchida Trirattanawong</span>
+            </div>
+            <div class="contact-item">
+                <strong>Status:</strong>
+                <span>Medical Student</span>
+            </div>
+            <div class="contact-item">
+                <strong>Phone:</strong>
+                <span>08X-XXX-XXXX</span>
+            </div>
+            <div class="contact-item">
+                <strong>Facebook:</strong>
+                <a href="#" target="_blank">Chananchida Trirattanawong</a>
+            </div>
+            <div class="contact-item">
+                <strong>E-mail:</strong>
+                <span>chananchida@example.com</span>
+            </div>
+            <div class="contact-item">
+                <strong>Address:</strong>
+                <span>Thailand</span>
+            </div>
+            <div class="contact-item">
+                <strong>School / University:</strong>
+                <span>Faculty of Medicine</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 CHANANCHIDA TRIRATTANAWONG. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
